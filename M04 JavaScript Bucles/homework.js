@@ -70,6 +70,12 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
    // Tu código:
+   if ((num % 3 === 0) && (num % 5 === 0)) return "fizzbuzz";
+   if (num % 3 === 0) return "fizz";
+   if (num % 5 === 0) return "buzz";
+
+   return false;
+
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -80,6 +86,17 @@ function operadoresLogicos(num1, num2, num3) {
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if ((num1 > num2) && (num1 > num3) && (Math.sign(num1) === 1)) return "Numero 1 es mayor y positivo";
+   if (Math.sign (num1 || num2 || num3) === -1) return "Hay negativos";
+   if (num3 > (num1 && num2)) {
+      return num3 +1;
+   };
+   if ((num1 && num2 && num3) === 0) return "Error";
+
+   return false;
+
+
+
 }
 
 function esPrimo(num) {
@@ -89,18 +106,32 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+
+   if (num <= 1) return false;
+   
+   for (let i = 2 ; i <= num/2 ; i++){
+      if (num % i === 0) {
+         return false;
+      }
+   }
+ return true;
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor === true) return "Soy verdadero";
+   return "Soy falso";
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   if (num >= 100 && num <= 999) return true;
+   return false;
+   
 }
 
 function doWhile(num) {
@@ -108,6 +139,15 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+
+   let contador = 0;
+
+   do {
+      num= num + 5;
+      contador ++;
+   } while (contador < 8)
+
+   return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
